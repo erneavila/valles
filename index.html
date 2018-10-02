@@ -14,12 +14,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2wuA0BO3r7KsMQD_CenEILiFTslrFxzg"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Styles -->
     <link rel="stylesheet" href="css/boot.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-dark navbar-fixed-top" >
-        <a class="navbar-brand" href="index.html">MI INGRESO A VALLES</a>
+    <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-dark navbar-fixed-top">
+           
+        <a class="navbar-brand" href="index.html">
+            <img src="https://pbs.twimg.com/profile_images/932286993899200512/PiJl-R4m_400x400.jpg" id="img_avatar">
+            MI INGRESO A VALLES
+        </a>
+        
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +46,7 @@
                 <li class="nav-item" id="mapa">
                     <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Mapa</a>
                 </li>
-                <li class="nav-item" id="carrera" onclick="obtenerCarreraActual();">
+                <li class="nav-item" id="carrera" onclick="obtenerLocalStorage();">
                     <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Configuración</a>
                 </li>
             </ul>
@@ -53,6 +59,9 @@
     <!-- <div class="p-3 mb-2 bg-dark text-white fixed-bottom" id="infocurso"> -->
     
     <form action="index.html" id="form">
+        <label for="exampleInputEmail1">Avatar (url)</label>
+        <input class="form-control" type="url" id="avatar">
+        <label for="exampleInputEmail1">Carrera</label>
         <select id="carreras" class="form-control">
             <option value="seleccionar" id='seleccionar'>Selecciona tu carrera</option>
             <option >Abogado</option>
@@ -75,17 +84,35 @@
         <button type="submit" onclick="guardarLocalStorage()" class="btn btn-warning btn-lg align-middle" id="guardar">Guardar</button>
     </form>
 
-    <div id="infocurso"></div>       
+    <div id="infocurso"></div>    
+    
+    
     <div id="biblioteca">
         <div class="canvas">
-
             
-
+            
+            
             
         </div> 
     </div>
 
     <div id="map"></div>
+
+    <div class="social">
+        
+        <a href="https://twitter.com/erneavila" target="blank">
+            <i class="fab fa-twitter"></i>
+        </a>
+        
+        <i class="fab fa-facebook-square">
+
+        </i>
+        <i class="fab fa-google-plus-g">
+
+        </i>
+        <i class="fab fa-instagram"></i>
+    </div>   
+
     
     <script>
 
@@ -93,6 +120,7 @@
             $('#map').hide();
             $('#form').hide();
             $('#biblioteca').hide();
+            $('#img_avatar').attr('src', localStorage.getItem("avatar", avatar));
 
             $('#carrera').click(function(){
                 $('#map').hide();
@@ -121,17 +149,33 @@
         });
 
         function guardarLocalStorage(){
+
             if(document.getElementById('carreras').value==document.getElementById('seleccionar').value){
-                    alert("Seleccione una carrera");
+                    
                 }else{
                     let carrera = document.getElementById( 'carreras' );
                     localStorage.setItem( "carrera", carrera.value );
             }
+            
+
+            guardarAvatar();
         }
 
-        function obtenerCarreraActual(){
+        function guardarAvatar(){
+            if (localStorage.getItem("avatar", avatar)=="") {
+                let avatar = document.getElementById( 'avatar' );
+                localStorage.setItem( "avatar", avatar.value );
+            }else{
+                
+            }
+        }
+
+        function obtenerLocalStorage(){
             var carrera = localStorage.getItem("carrera", carrera);
             document.getElementById('seleccionar').innerHTML=carrera;
+
+            var avatar = localStorage.getItem("avatar", avatar);
+            document.getElementById('avatar').placeholder=avatar;
         }
         
         var map; 
