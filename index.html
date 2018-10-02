@@ -162,10 +162,12 @@
         }
 
         function guardarAvatar(){
-            if (localStorage.getItem("avatar", avatar)=="") {
-                let avatar = document.getElementById( 'avatar' );
+            let avatar = document.getElementById( 'avatar' );
+
+            if (localStorage.getItem("avatar", avatar)=="" || localStorage.getItem("avatar", avatar)==null ) {
                 localStorage.setItem( "avatar", avatar.value );
             }else{
+                localStorage.setItem( "avatar", avatar.value );
                 
             }
         }
