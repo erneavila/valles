@@ -1,0 +1,205 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #000;
+    /* background-image: url("../images/bk3.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #16202a;
+}
+
+
+#infocurso{
+    background-color: #18242f;
+    color:white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* padding-left: 0em; */
+    text-align: center;
+}
+
+#biblioteca{
+    background-color: #16202a;
+    width: 100%;
+    height: 100%; 
+}
+
+#form {
+    position: relative;
+    top: 17%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 18px;
+    z-index: 4; 
+}
+
+#guardar {
+    margin: 0.5em;
+    position: relative;
+    top: 0.3px;
+  }
+
+#map {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+
+}
+nav {
+    background-color: #16202a;
+}
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 54;
+    
+}
+
+.canvas {
+    position: fixed;
+    background-color: #18242f;
+    color: white;
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+}
+
+.columnas {
+    position: absolute; 
+    background: white;
+    padding-left: 2px;
+    font-size: 0.5em;
+    transform: rotate(-90deg);
+    
+}  
+
+
+ 
+.columnas2 {
+    position: absolute; 
+    display: block;
+    background: white;
+    padding-left: 2px; 
+    font-size: 0.5em;
+    transform: rotate(-90deg);
+}
+ 
+.hg{
+    height: 4.1%;
+} 
+
+.hg2 {
+    height: 3.1%;
+}
+
+
+.wd  {width:95px;}
+
+.wd2 {width: 85px;}
+
+.top1 {top: 50px;}
+.top2 {top: 45px;}
+.top3 {top:160px;} 
+
+.ps1 {left: 0%;}
+.ps2 {left: 4%;}
+.ps3 {left: 8%;} 
+
+.ps4 {left: 15%;} 
+.ps5 {left: 19%;}
+.ps6 {left: 23%;}
+
+.ps7 {left: 27%;}
+.ps8 {left: 31%;}
+.ps9 {left: 35%;}
+.ps10 {left:39%;}
+
+.ps11 {left:50%;}
+.ps12 {left:54%;}
+.ps13 {left:58%;}
+.ps14 {left:62%;}
+.ps15 {left:66%;}
+.ps16 {left:70%;}
+
+.ps17 {left:0%;}
+.ps18 {left:4%;}
+.ps19 {left:8%;}
+
+.ps20 {left:15%;}
+.ps21 {left:19%;}
+.ps22 {left:23%;}
+.ps23 {left:27%;}
+.ps24 {left:31%;}
+ 
+.ps25 {left:34%;}
+.ps26 {left:38%;}
+.ps27 {left:42%;} 
+
+.ps28 {left:50%;}
+.ps29 {left:54%;}
+.ps30 {left:58%;}
+.ps31 {left:62%;}
+.ps32 {left:66%;}
+.ps33 {left:70%;}
+
+.ps34 {left:76%;}
+.ps35 {left:78%;}
+.ps36 {left:80%;}
+.ps37 {left:82%;}
+.ps38 {left:84%;}
+.ps39 {left:86%;}
+.ps40 {left:88%;}
+.ps41 {left:90%;} 
+/* 
+.ps42 {left:66%;}
+.ps43 {left:70%;} */
+
+/*
+.ps34 {left:  0px;}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.columna_2 {
+    position: absolute;
+    background: #fff;
+    color: #086FE2;
+    width: 80px;
+    height: 17px;
+    padding: 1px;
+    top: 50px;
+    left: 20px;
+    font-size: 8px;
+    text-align: left;
+    text-align: center;
+    transform: rotate(-90deg);
+    
+} */

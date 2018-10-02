@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>MI INGRESO A VALLES</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jquery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/prub.js"></script>
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/biblioteca.js"></script>
+    <!-- google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2wuA0BO3r7KsMQD_CenEILiFTslrFxzg"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/boot.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-dark navbar-fixed-top" >
+        <a class="navbar-brand" href="index.html">MI INGRESO A VALLES</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item" id="inicio">
+                    <a class="nav-link"data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Inicio</a>
+                </li>
+                <li class="nav-item" id="biblio">
+                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Biblioteca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Comedores</a>
+                </li>
+                <li class="nav-item" id="mapa">
+                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Mapa</a>
+                </li>
+                <li class="nav-item" id="carrera" onclick="obtenerCarreraActual();">
+                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Configuración</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form> -->
+        </div>
+    </nav>
+    <!-- <div class="p-3 mb-2 bg-dark text-white fixed-bottom" id="infocurso"> -->
+    
+    <form action="index.html" id="form">
+        <select id="carreras" class="form-control">
+            <option value="seleccionar" id='seleccionar'>Selecciona tu carrera</option>
+            <option >Abogado</option>
+            <option >Administración</option>
+            <option >Agronegocios</option>
+            <option >Contaduría</option>
+            <option >Educación</option>
+            <option >Electrónica y Computación</option>
+            <option >Instrumentación</option>
+            <option >Mecatrónica</option>
+            <option >Psicología</option>
+            <option >Tecnologías de la información</option>
+            <option >Trabajo social</option>
+            <option >Turismo</option>
+            <option >Nutrición</option>
+            <option >Diseño molecular de materiales</option>
+            <option >Sistemas biológicos</option>
+            <option >Geofísica</option>
+        </select>            
+        <button type="submit" onclick="guardarLocalStorage()" class="btn btn-warning btn-lg align-middle" id="guardar">Guardar</button>
+    </form>
+
+    <div id="infocurso"></div>       
+    <div id="biblioteca">
+        <div class="canvas">
+
+            
+
+            
+        </div> 
+    </div>
+
+    <div id="map"></div>
+    
+    <script>
+
+        $(document).ready(function(){
+            $('#map').hide();
+            $('#form').hide();
+            $('#biblioteca').hide();
+
+            $('#carrera').click(function(){
+                $('#map').hide();
+                $('#form').fadeIn(1000);
+                $('#biblioteca').hide();
+                $('#infocurso').fadeOut(1000);
+            });
+            $('#mapa').click(function(){
+                $('#map').fadeIn(1000);
+                $('#form').hide();
+                $('#infocurso').fadeOut(1000);
+                $('#biblioteca').hide();
+            });
+            $('#biblio').click(function(){
+                $('#biblioteca').fadeIn(1000);
+                $('#map').hide();
+                $('#form').hide();
+                $('#infocurso').fadeOut(1000);
+            });
+            $('#inicio').click(function(){
+                $('#map').hide();
+                $('#form').hide();
+                $('#biblioteca').hide();
+                $('#infocurso').fadeIn(1000);
+            });
+        });
+
+        function guardarLocalStorage(){
+            if(document.getElementById('carreras').value==document.getElementById('seleccionar').value){
+                    alert("Seleccione una carrera");
+                }else{
+                    let carrera = document.getElementById( 'carreras' );
+                    localStorage.setItem( "carrera", carrera.value );
+            }
+        }
+
+        function obtenerCarreraActual(){
+            var carrera = localStorage.getItem("carrera", carrera);
+            document.getElementById('seleccionar').innerHTML=carrera;
+        }
+        
+        var map; 
+
+        
+        obtenerCurso(path, marker);
+
+        function initMap() {
+            
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {center: {lat: 20.537, lng: -103.967}, zoomControl: false, zoom: 17, disableDefaultUI: true};
+            map = new google.maps.Map(mapCanvas,mapOptions);
+
+            var flightPath = new google.maps.Polyline({
+                path: path,
+                strokeColor: "#FFBF00",
+                strokeOpacity: 1,
+                strokeWeight: 4
+            });
+            
+            flightPath.setMap(map);
+
+            var location = {lat: 20.534656, lng: -103.967283};
+            var marcador = new google.maps.Marker({
+                position: location,
+                label: "A",
+                map: map
+            });
+
+            var marcador = new google.maps.Marker({
+                position: marker,
+                label: "B",
+                map: map
+            });
+            
+         
+        }
+        
+    google.maps.event.addDomListener(window, 'load', initMap);
+
+    </script>
+    <!-- mapa -->
+    
+    <!-- Optional JavaScript -->
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
