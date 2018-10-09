@@ -12,13 +12,18 @@ body, html{
 }
 
 .navbar-brand{
-    margin: 0 auto;
+    /* margin: 0 auto; */
+}
+
+.avatar{
+    width: 45px;
+    border-radius: 50%;
 }
 
 .navbar-brand img{
     border-radius: 50%;
     width: 47px;
-    margin-right: 7px;
+    /* margin-right: 7px; */
 }
 
 #infocurso{
@@ -30,7 +35,18 @@ body, html{
     /* padding-left: 0em; */
     text-align: center;
 }
-
+.buscar {
+    position: relative;
+    background-color: #18242f;
+    top: 70px;
+    color: #ffffff;
+    margin: auto;
+    width: 300px;
+}
+.buscar form input{
+    background-color: #18242f;
+    
+}
 .social{
     
     text-align: center;

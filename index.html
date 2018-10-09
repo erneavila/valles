@@ -21,35 +21,32 @@
   <body>
     <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-dark navbar-fixed-top">
            
-        <a class="navbar-brand" href="index.html">
-            <img src="https://pbs.twimg.com/profile_images/932286993899200512/PiJl-R4m_400x400.jpg" id="img_avatar">
-            MI INGRESO A VALLES
-        </a>
-        
+      <img class="avatar" src="https://pbs.twimg.com/profile_images/932286993899200512/PiJl-R4m_400x400.jpg" id="img_avatar">
+      <a class="navbar-brand" href="index.html">MI INGRESO A VALLES</a>
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item" id="inicio">
-                    <a class="nav-link"data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Inicio</a>
-                </li>
-                <li class="nav-item" id="biblio">
-                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Biblioteca</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Eventos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Comedores</a>
-                </li>
-                <li class="nav-item" id="mapa">
-                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Mapa</a>
-                </li>
-                <li class="nav-item" id="carrera" onclick="obtenerLocalStorage();">
-                    <a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Configuración</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item" id="inicio">
+              <a class="nav-link"data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Inicio</a>
+            </li>
+						<li class="nav-item" id="biblio">
+								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Biblioteca</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Eventos</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Comedores</a>
+						</li>
+						<li class="nav-item" id="mapa">
+								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Mapa</a>
+						</li>
+						<li class="nav-item" id="carrera" onclick="obtenerLocalStorage();">
+								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Configuración</a>
+						</li>
+					</ul>
             <!-- <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
@@ -59,61 +56,63 @@
     <!-- <div class="p-3 mb-2 bg-dark text-white fixed-bottom" id="infocurso"> -->
     
     <form action="index.html" id="form">
-        <label for="exampleInputEmail1">Avatar (url)</label>
-        <input class="form-control" type="url" id="avatar">
-        <label for="exampleInputEmail1">Carrera</label>
-        <select id="carreras" class="form-control">
-            <option value="seleccionar" id='seleccionar'>Selecciona tu carrera</option>
-            <option >Abogado</option>
-            <option >Administración</option>
-            <option >Agronegocios</option>
-            <option >Contaduría</option>
-            <option >Educación</option>
-            <option >Electrónica y Computación</option>
-            <option >Instrumentación</option>
-            <option >Mecatrónica</option>
-            <option >Psicología</option>
-            <option >Tecnologías de la información</option>
-            <option >Trabajo social</option>
-            <option >Turismo</option>
-            <option >Nutrición</option>
-            <option >Diseño molecular de materiales</option>
-            <option >Sistemas biológicos</option>
-            <option >Geofísica</option>
-        </select>            
-        <button type="submit" onclick="guardarLocalStorage()" class="btn btn-warning btn-lg align-middle" id="guardar">Guardar</button>
+			<label for="exampleInputEmail1">Avatar (url)</label>
+			<input class="form-control" type="url" id="avatar">
+			<label for="exampleInputEmail1">Carrera</label>
+			<select id="carreras" class="form-control">
+					<option value="seleccionar" id='seleccionar'>Selecciona tu carrera</option>
+					<option >Abogado</option>
+					<option >Administración</option>
+					<option >Agronegocios</option>
+					<option >Contaduría</option>
+					<option >Educación</option>
+					<option >Electrónica y Computación</option>
+					<option >Instrumentación</option>
+					<option >Mecatrónica</option>
+					<option >Psicología</option>
+					<option >Tecnologías de la información</option>
+					<option >Trabajo social</option>
+					<option >Turismo</option>
+					<option >Nutrición</option>
+					<option >Diseño molecular de materiales</option>
+					<option >Sistemas biológicos</option>
+					<option >Geofísica</option>
+			</select>            
+			<button type="submit" onclick="guardarLocalStorage()" class="btn btn-warning btn-lg align-middle" id="guardar">Guardar</button>
     </form>
 
     <div id="infocurso"></div>    
     
     
     <div id="biblioteca">
-        <div class="canvas">
-            
-            
-            
-            
-        </div> 
+			<div class="buscar"> 
+				<form action="">
+					<input type="text" class="form-control" placeholder="Buscar Libro...">
+				</form>
+			</div>
+			<div class="desplegar-libros">
+				<ul class="lista">
+					<li>Fisica</li>
+					<li>Administracion</li>
+					<li>Matematicas</li>
+					<li>Economia</li>
+					<li>Programacion</li>
+				</ul>
+			</div>
+			<div class="canvas"></div> 
     </div>
 
-    <div id="map"></div>
-
+		<div id="map"></div>
+		
     <div class="social">
-        
-        <a href="https://twitter.com/erneavila" target="blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-        
-        <i class="fab fa-facebook-square">
-
-        </i>
-        <i class="fab fa-google-plus-g">
-
-        </i>
-        <i class="fab fa-instagram"></i>
+			<a href="https://twitter.com/erneavila" target="blank">
+					<i class="fab fa-twitter"></i>
+			</a>
+			<i class="fab fa-facebook-square"></i>
+			<i class="fab fa-google-plus-g"></i>
+			<i class="fab fa-instagram"></i>
     </div>   
 
-    
     <script>
 
         $(document).ready(function(){
@@ -138,7 +137,8 @@
                 $('#biblioteca').fadeIn(1000);
                 $('#map').hide();
                 $('#form').hide();
-                $('#infocurso').fadeOut(1000);
+								$('#infocurso').fadeOut(1000);
+								$('.buscar').fadeIn(1000);
             });
             $('#inicio').click(function(){
                 $('#map').hide();
@@ -181,7 +181,6 @@
         }
         
         var map; 
-
         
         obtenerCurso(path, marker);
 
