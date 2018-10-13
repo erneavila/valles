@@ -1,0 +1,18 @@
+[
+    {
+       "autor"  :"RUDIGER DORNBUSCH",
+       "titulo"  :"MACROECONOMIA",
+       "ed"      :"9",
+       "isbn"    :"84-481-4181-4",
+       "class"   :"339 DOR 2004",
+       "img"     :"../img/84-481-4181-4.jpg"
+    },
+    {
+       "autor"   :"FRANK S. BUDNICK",
+       "titulo"  :"MATEMATICAS APLICADAS PARA ADMINISTRACION, ECONOMIA Y CIENCIAS SOCIALES",
+       "ed"      :"3",
+       "isbn"    :"968-422-563-6",
+       "class"   :"519 BUD 1990",
+       "img"     :"../img/968-422-563-6.jpg"
+    }
+]

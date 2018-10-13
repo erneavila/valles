@@ -44,8 +44,18 @@ body, html{
     width: 300px;
 }
 .buscar form input{
-    background-color: #18242f;
+    background-color: #18242f;   
+}
+
+#lista{
+    position: relative;
+    color: #ffffff;
+    top: 90px;
     
+}
+#desplegar-lista{
+    position: relative;
+    color: #ffffff;
 }
 .social{
     
