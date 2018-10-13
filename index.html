@@ -84,14 +84,15 @@
     <script>
         $(document).ready(function(){
 					
-						//$("#lista li").hide();	
+						//$("#lista li").hide();
+						
             $(".form-control").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
                 $("#lista li").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                     if(value == 0){
 												$("#lista li").hide();
-											
+												
                     }
                 });
             });
@@ -109,21 +110,27 @@
 				<ul id="lista">
 						<script>
 							$(document).ready(function(){
+								
 								$.getJSON("biblioteca.json", function(data){
 									var datos_libros = "";
+									
+									
 									$.each(data,function(key, value){
 										
-										datos_libros += "<li>" + value.autor + "</li>";
-										datos_libros += "<hr>";
-										//datos_libros += "<p>" + value.titulo + "</p>"+"<br>";
-										// datos_libros += value.ed + "<br>";
-										// datos_libros += value.isbn + "<br>";
-										// datos_libros += value.class + "<br>";
-										// datos_libros += value.img;
+										datos_libros += "<li>AUTOR: " + value.autor + "</li>";
+										
+										datos_libros += "<li>TITULO: " + value.titulo + "</li>";
+										datos_libros += "<li>EDICION: " + value.ed + "</li>"+ "<br>";
+										datos_libros += "<li>ISBN: " + value.isbn + "</li>" + "<br>";
+										datos_libros += "<li>CLASS: " + value.class + "</li>" + "<br>";
+										//datos_libros += value.img;
 
 										});
+										
+										console.log(data.length);
 										$("#lista").append(datos_libros);
 										$("#lista li").hide();	
+								
 										
 								});
 								

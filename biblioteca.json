@@ -14,5 +14,13 @@
        "isbn"    :"968-422-563-6",
        "class"   :"519 BUD 1990",
        "img"     :"../img/968-422-563-6.jpg"
-    }
+    },
+    {
+        "autor"   :"FRANK S. BUDNICK",
+        "titulo"  :"MATEMATICAS APLICADAS CIENCIAS SOCIALES",
+        "ed"      :"3",
+        "isbn"    :"968-422-563-6",
+        "class"   :"519 BUD 1990",
+        "img"     :"../img/968-422-563-6.jpg"
+     }
 ]
