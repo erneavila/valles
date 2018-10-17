@@ -11,10 +11,6 @@ body, html{
     background-color: #16202a;
 }
 
-.navbar-brand{
-    /* margin: 0 auto; */
-}
-
 .avatar{
     width: 45px;
     border-radius: 50%;
@@ -46,22 +42,51 @@ body, html{
 .buscar form input{
     background-color: #18242f;   
 }
-#n_libros{
+
+/* #desplegar-lista{
+    position: relative;
+    color: #ffffff;
+    
+} */
+
+#lista{
+    position: relative;
+    top: 75px;
+    color: #ffffff;
+}
+
+#lista li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#lista p{
+    margin: 0;
+    padding: 0;
+}
+
+/* #n_libros{
     position: relative;
     top: 200px;
 }
-#lista{
+#lista li{
     position: relative;
     color: #ffffff;
     top: 75px;
-    
+    margin: 0;
+    padding: 0;   
 }
 
-#desplegar-lista{
+#lista p {
     position: relative;
+    top: 75px; 
     color: #ffffff;
-    
-}
+} */
+
+
+
+
 .social{
     
     text-align: center;
@@ -121,15 +146,9 @@ nav {
 .navbar {
     position: absolute;
     width: 100%;
-    z-index: 54;
-    
+    z-index: 54; 
 }
 
-.canvas {
-    position: fixed;
-    background-color: #18242f;
-    color: white;
-    bottom: 30px;
-    height: 150px;
-    width: 100%;
+.pull-left{
+    float: left;
 }

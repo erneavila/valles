@@ -15,7 +15,12 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Styles -->
-    <link rel="stylesheet" href="css/boot.css">
+		<link rel="stylesheet" href="css/boot.css">
+		<!-- tipuejs -->
+		<script src="js/tipueslide_content.js"></script>
+		<link rel="stylesheet" href="css/tipueslide.css">
+		<script src="js/tipueslide.js"></script>
+		<!-- end tipue -->
   </head>
   <body>
     <nav class="navbar navbar-expand-sm|md|lg|-xl navbar-dark navbar-fixed-top">
@@ -31,7 +36,7 @@
               <a class="nav-link"data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Inicio</a>
             </li>
 						<li class="nav-item" id="biblio">
-								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Biblioteca</a>
+								<a class="nav-link tipue-slide-toggle" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Biblioteca</a>
 						</li>
 						<li class="nav-item">
 								<a class="nav-link" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" href="#">Eventos</a>
@@ -82,30 +87,42 @@
 
     <div id="infocurso"></div>    
     <script>
-        $(document).ready(function(){
+        // $(document).ready(function(){
 					
-						//$("#lista li").hide();
+				// 		//$("#lista li").hide();
 						
-            $(".form-control").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#lista li").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    if(value == 0){
-												$("#lista li").hide();
-												
-                    }
-                });
-            });
-        });
+        //     $(".form-control").on("keyup", function() {
+        //         var value = $(this).val().toLowerCase();
+        //         $("#lista li").filter(function() {
+        //             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        //             if(value == 0){
+				// 							$("#lista li").hide();
+				// 							$("#lista p").hide();
+				// 							$("#lista img").hide();	
+        //             }
+        //         });
+        //     });
+        // });
     </script>
     
 
     <div id="biblioteca">
-			<div class="buscar"> 
-					<form action="">
-							<input type="text" class="form-control" placeholder="Buscar Libro...">
-					</form>
-			</div>
+			
+			
+		 <div class="buscar"> 
+				<div class="tipue-slide-toggle tipue-slide-screen"></div><div id="tipue-slide"></div>
+				<!-- <a class="btn-2 tipue-slide-toggle">Try The Demo</a> -->
+				<script>
+					$(document).ready(function() {
+								$('.tipue-slide-screen').tipueslide();
+					});
+				</script>
+				
+				
+				<!-- <form action="">
+						<input type="text" class="form-control" placeholder="Buscar Libro...">
+					</form> -->
+			</div>	<!--
 			<div class="desplegar-libros">
 				<ul id="lista">
 						<script>
@@ -118,26 +135,28 @@
 									$.each(data,function(key, value){
 										
 										datos_libros += "<li>AUTOR: " + value.autor + "</li>";
-										
 										datos_libros += "<li>TITULO: " + value.titulo + "</li>";
 										datos_libros += "<li>EDICION: " + value.ed + "</li>"+ "<br>";
 										datos_libros += "<li>ISBN: " + value.isbn + "</li>" + "<br>";
 										datos_libros += "<li>CLASS: " + value.class + "</li>" + "<br>";
-										//datos_libros += value.img;
+										datos_libros += "<img src='" + value.img + value.isbn + ".jpg' width='100' heigth='300'/>";
+
+										// $("#lista img").fadeIn(1000);
 
 										});
 										
 										console.log(data.length);
 										$("#lista").append(datos_libros);
-										$("#lista li").hide();	
-								
-										
+										$("#lista li").hide();
+										$("#lista p").hide();
+										$("#lista img").hide();	
+
 								});
 								
 							});
 						</script>
 				</ul>
-			</div>
+			</div> -->
 			
     </div>
 
@@ -147,9 +166,12 @@
 			<a href="https://twitter.com/erneavila" target="blank">
 					<i class="fab fa-twitter"></i>
 			</a>
-			<i class="fab fa-facebook-square"></i>
-			<i class="fab fa-google-plus-g"></i>
-			<i class="fab fa-instagram"></i>
+			<a href="https://www.facebook.com/erneavila" target="blank">
+				<i class="fab fa-facebook-square"></i>
+			</a>
+			<a>
+				<i class="fab fa-instagram"></i>
+			</a>
     </div>   
 
     <script>
